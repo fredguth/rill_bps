@@ -1,0 +1,40 @@
+title: Preços (Itens de Compra)
+model: item_model
+timeseries: ""
+measures:
+  - label: "Preços (Itens de Compra)"
+    expression: COUNT(*)
+    name: measure_3
+    description: "COUNT(*)"
+    format_preset: humanize
+  - label: "Fabricantes"
+    expression: COUNT(DISTINCT CNPJ_FABRICANTE)
+    name: measure_1
+    description: "COUNT(DISTINCT CNPJ_FABRICANTE)"
+    format_preset: humanize
+  - label: "Fornecedores"
+    expression: COUNT(DISTINCT CNPJ_FORNECEDOR)
+    name: measure_2
+    description: "COUNT(DISTINCT CNPJ_FORNECEDOR)"
+    format_preset: humanize
+dimensions:
+  - name: Fabricantes
+    label: Fabricantes
+    column: CNPJ_FABRICANTE
+    description: ""
+  - name: CNPJ_FORNECEDOR
+    label: Fornecedores
+    column: CNPJ_FORNECEDOR
+    description: ""
+available_time_zones:
+  - America/Los_Angeles
+  - America/Chicago
+  - America/New_York
+  - Europe/London
+  - Europe/Paris
+  - Asia/Jerusalem
+  - Europe/Moscow
+  - Asia/Kolkata
+  - Asia/Shanghai
+  - Asia/Tokyo
+  - Australia/Sydney

@@ -1,0 +1,57 @@
+# Visit https://docs.rilldata.com/reference/project-files to learn more about Rill project files.
+
+title: Preços no BPS
+model: tabelao
+timeseries: "DT_COMPRA"
+measures:
+  - label: Preços Registrados
+    expression: count(*)
+    name: total_records
+    description: Número de registros de preços
+    format_preset: humanize
+    valid_percent_of_total: true
+  - label: "Fornecedores"
+    expression: COUNT(DISTINCT CNPJ_FORNECEDOR)
+    name: count_distinct_CNPJ_FORNECEDOR
+    description: "COUNT(DISTINCT CNPJ_FORNECEDOR)"
+    format_preset: humanize
+  - label: "Fabricantes"
+    expression: COUNT(DISTINCT CNPJ_FABRICANTE)
+    name: count_distinct_CNPJ_FABRICANTE
+    description: "COUNT(DISTINCT CNPJ_FABRICANTE)"
+    format_preset: humanize
+  - label: Sum(QT_UNIDADES)
+    expression: Sum(QT_UNIDADES)
+    name: Sum(QT_UNIDADES)
+    description: Sum of QT_UNIDADES
+    format_preset: humanize
+    valid_percent_of_total: true
+  - label: Sum(VL_TOTAL_ITEM)
+    expression: sum(VL_TOTAL_ITEM)
+    name: sum(VL_TOTAL_ITEM)
+    description: Sum of VL_TOTAL_ITEM
+    format_preset: humanize
+    valid_percent_of_total: true
+dimensions:
+  - name: CODIGOBR
+    label: CODIGOBR
+    column: CODIGOBR
+    description: ""
+  - name: UNIDADE
+    label: UNIDADE
+    column: UNIDADE
+    description: ""
+  - name: FABRICANTE
+    label: FABRICANTE
+    column: FABRICANTE
+    description: ""
+  - name: FORNECEDOR
+    label: FORNECEDOR
+    column: FORNECEDOR
+    description: ""
+  - name: REGISTRO_ANVISA
+    label: REGISTRO_ANVISA
+    column: REGISTRO_ANVISA
+    description: ""
+available_time_zones:
+  - America/Sao_Paulo
