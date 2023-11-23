@@ -2,6 +2,7 @@
 
 title: Preços no BPS
 model: tabelao
+default_time_range: "P5Y"
 timeseries: "DT_COMPRA"
 measures:
   - label: Preços Registrados
